@@ -1,0 +1,48 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+*local_settings.py
+/backend/backend/.idea/*
+/backend/backend/__pycache__/*
+/backend/backend/tags/__pycache__/*
+/backend/__pycache__/*
+/backend/backend/migrations/*
+#logs
+/backend/backend/logs/*
+*app.log*
+*.env*
+
+*/.idea/
+# dependencies
+/node_modules
+/.yarn
+*.pyc
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+/.idea
+/.vscode
+
+/src/styles/tailwind.css
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp*
+backend/backend/__pycache__/__init__.cpython-38.pyc
+backend/backend/__pycache__/__init__.cpython-38.pyc
+*.pyc
+*.xml
+*.iml
+*.xml
+*.pyc
+*.pyc

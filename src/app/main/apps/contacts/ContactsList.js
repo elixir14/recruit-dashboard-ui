@@ -88,7 +88,7 @@ function ContactsList(props) {
 	const columns = useSelector(({ fuse }) => fuse.table.columns);
 	const [filteredData, setFilteredData] = useState(null);
 	// console.log(filterColumn)
-	const [pageSizes] = useState([5, 10, 15, 0]);
+	const [pageSizes] = useState([10, 20, 50, 100]);
 	const [selection, setSelection] = useState([]);
 
 	const [columnOrder, setColumnOrder] = useState([]);

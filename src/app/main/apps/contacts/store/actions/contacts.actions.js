@@ -24,7 +24,7 @@ export const SAVE_CANDIDATE_TAGS = '[CONTACTS APP] SAVE_CANDIDATE_TAGS';
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 export function getContacts() {
-	const request = axios.get(`${BACKEND_URL}/candidates`, {
+	const request = axios.get(`${BACKEND_URL}/api/candidates`, {
 		Authorization: `Bearer ${localStorage.getItem('jwt_access_token')}`
 	});
 
@@ -248,7 +248,7 @@ export function setContactsUnstarred(contactIds) {
 }
 
 export function getTags() {
-	const request = axios.get(`${BACKEND_URL}/tags`, {
+	const request = axios.get(`${BACKEND_URL}/api/tags`, {
 		Authorization: `Bearer ${localStorage.getItem('jwt_access_token')}`
 	});
 	request.then(res => {

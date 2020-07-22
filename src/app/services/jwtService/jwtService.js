@@ -49,7 +49,7 @@ class JwtService extends FuseUtils.EventEmitter {
 
 	createUser = data => {
 		return new Promise((resolve, reject) => {
-			axios.post(`${BACKEND_URL}/users`, data).then(response => {
+			axios.post(`${BACKEND_URL}/api/signup`, data).then(response => {
 				if (response.data.username) {
 					this.signInWithEmailAndPassword(data.username, data.password)
 						.then(user => {
@@ -68,7 +68,7 @@ class JwtService extends FuseUtils.EventEmitter {
 	signInWithEmailAndPassword = (email, password) => {
 		return new Promise((resolve, reject) => {
 			axios
-				.post(`${BACKEND_URL}/login`, {
+				.post(`${BACKEND_URL}/api/login`, {
 					username: email,
 					password
 				})
@@ -94,7 +94,7 @@ class JwtService extends FuseUtils.EventEmitter {
 			// 	Promise.reject(new Error('Failed to login with token.'));
 			// }
 			axios
-				.get(`${BACKEND_URL}/refresh`, {
+				.get(`${BACKEND_URL}/api/refresh`, {
 					headers: {
 						Authorization: `Bearer ${refreshToken}`
 					}

@@ -80,7 +80,7 @@ export default function ContactTag({ row }) {
 		dispatch({ type: Actions.SAVE_CANDIDATE_TAGS, tags: [...selectedTags], uid: row.uid });
 		if (newTags.length > 0) {
 			await axios
-				.post(`${BACKEND_URL}/tag/create`, newTags, {
+				.post(`${BACKEND_URL}/api/tags`, newTags, {
 					Authorization: `Bearer ${localStorage.getItem('jwt_access_token')}`
 				})
 				.then(response => {
@@ -99,7 +99,7 @@ export default function ContactTag({ row }) {
 			}
 		});
 		await axios.post(
-			`${BACKEND_URL}/candidate/tag`,
+			`${BACKEND_URL}/api/candidate/tag`,
 			{
 				candidate_id: row.uid,
 				tags: ids
